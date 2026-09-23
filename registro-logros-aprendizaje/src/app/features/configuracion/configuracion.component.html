@@ -1,0 +1,63 @@
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="mini-logo">IE 20191</div>
+      <div>
+        <h3>I.E. 20191</h3>
+        <small>Alfonso Ugarte</small>
+      </div>
+    </div>
+    <nav class="sidebar-menu">
+      <a routerLink="/dashboard">Dashboard Principal</a>
+      <a routerLink="/asistencia/matriz">Vista Detallada y Matriz</a>
+      <a routerLink="/asistencia/alertas">Reportes de Alertas</a>
+      <a routerLink="/configuracion" class="active">Configuración y Admin</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="content-header">
+      <div>
+        <h1>Configuración del Sistema</h1>
+        <p>Parámetros generales y datos institucionales.</p>
+      </div>
+      <button class="btn-primary" (click)="guardarCambios()">💾 Guardar Cambios</button>
+    </header>
+
+    <div class="config-layout">
+      <div class="tabs">
+        <a class="tab-item active">Datos del Colegio</a>
+        <a class="tab-item">Gestión de Usuarios</a>
+        <a class="tab-item">Identidad Visual</a>
+      </div>
+
+      <div class="config-card">
+        <h3>Datos de la Institución</h3>
+        <div class="form-group">
+          <label>Nombre Institucional</label>
+          <input type="text" [(ngModel)]="colegio.nombre">
+        </div>
+        <div class="form-group">
+          <label>Código Modular</label>
+          <input type="text" [(ngModel)]="colegio.codigoModular">
+        </div>
+        <div class="form-group">
+          <label>Dirección</label>
+          <input type="text" [(ngModel)]="colegio.direccion">
+        </div>
+
+        <h3 style="margin-top: 20px;">Identidad Visual</h3>
+        <div class="color-box">
+          <div>
+            <label>Color Principal</label>
+            <input type="color" [(ngModel)]="colegio.colorHex">
+          </div>
+          <div>
+            <label>Color Secundario</label>
+            <input type="color" [(ngModel)]="colegio.colorSecundario">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

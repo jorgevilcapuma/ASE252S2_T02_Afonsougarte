@@ -1,0 +1,67 @@
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="mini-logo">IE 20191</div>
+      <div>
+        <h3>I.E. 20191</h3>
+        <small>Alfonso Ugarte</small>
+      </div>
+    </div>
+    <nav class="sidebar-menu">
+      <a routerLink="/dashboard">Dashboard Principal</a>
+      <a routerLink="/asistencia/matriz">Vista Detallada y Matriz</a>
+      <a routerLink="/asistencia/alertas" class="active">Reportes de Alertas</a>
+      <a routerLink="/configuracion">Configuración y Admin</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="content-header">
+      <div>
+        <h1>Reportes de Alertas Tempranas</h1>
+        <p>Auditoría e historial de ausentismo institucional</p>
+      </div>
+      <button class="btn-primary">Notificación Masiva</button>
+    </header>
+
+    <div class="alert-summary">
+      <div class="card border-red">
+        <h3>Críticas (3+ Faltas)</h3>
+        <span class="count">24</span>
+        <small>Requiere acción inmediata</small>
+      </div>
+      <div class="card border-orange">
+        <h3>Preventivas (2 Faltas)</h3>
+        <span class="count">45</span>
+        <small>Monitoreo activo</small>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-header">
+        <h3>Registro de Alertas Críticas</h3>
+        <input type="text" placeholder="Buscar alumno..." class="search-box">
+      </div>
+      <table class="alert-table">
+        <thead>
+          <tr>
+            <th>Alumno</th>
+            <th>Grado/Sección</th>
+            <th>Faltas Acum.</th>
+            <th>Estado Alerta</th>
+            <th>Último Aviso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of alertas">
+            <td><strong>{{ item.alumno }}</strong></td>
+            <td>{{ item.grado }}</td>
+            <td><span class="badge-faltas">{{ item.faltas }} Faltas</span></td>
+            <td>💬📧 Notification Sent</td>
+            <td>{{ item.ultimoAviso }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>

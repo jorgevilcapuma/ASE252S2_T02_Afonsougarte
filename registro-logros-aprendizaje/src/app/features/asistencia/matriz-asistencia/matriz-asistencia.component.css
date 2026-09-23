@@ -1,0 +1,31 @@
+.app-layout { display: flex; min-height: 100vh; }
+.sidebar { width: 260px; background-color: #7A0C0C; color: white; padding: 20px 0; }
+.sidebar-header { display: flex; align-items: center; gap: 10px; padding: 0 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.mini-logo { background: #FDC425; color: black; font-weight: bold; padding: 6px; border-radius: 4px; }
+.sidebar-menu { display: flex; flex-direction: column; margin-top: 15px; }
+.sidebar-menu a { color: white; text-decoration: none; padding: 12px 20px; font-size: 14px; }
+.sidebar-menu a.active { background: rgba(0,0,0,0.2); border-left: 4px solid #FDC425; }
+
+.main-content { flex: 1; padding: 25px; background: #F4F6F9; }
+.content-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.filter-box { display: flex; gap: 10px; }
+.filter-box select { padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
+.kpi-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.kpi-title { font-size: 12px; color: #666; font-weight: bold; }
+.kpi-card.green h2 { color: #22c55e; }
+.kpi-card.red h2 { color: #ef4444; }
+.kpi-card.yellow h2 { color: #f59e0b; }
+
+.table-card { background: white; padding: 15px; border-radius: 8px; overflow-x: auto; }
+.matriz-table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: center; }
+.matriz-table th, .matriz-table td { padding: 8px; border: 1px solid #E2E8F0; }
+.text-left { text-align: left !important; }
+
+.badge { display: inline-block; width: 20px; height: 20px; line-height: 20px; border-radius: 4px; color: white; font-weight: bold; }
+.badge.p { background-color: #22c55e; }
+.badge.a { background-color: #ef4444; }
+.badge.t { background-color: #f59e0b; }
+
+.btn-primary { background-color: #7A0C0C; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }

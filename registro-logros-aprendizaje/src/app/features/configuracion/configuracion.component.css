@@ -1,0 +1,23 @@
+.app-layout { display: flex; min-height: 100vh; }
+.sidebar { width: 260px; background-color: #7A0C0C; color: white; padding: 20px 0; }
+.sidebar-header { display: flex; align-items: center; gap: 10px; padding: 0 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.mini-logo { background: #FDC425; color: black; font-weight: bold; padding: 6px; border-radius: 4px; }
+.sidebar-menu { display: flex; flex-direction: column; margin-top: 15px; }
+.sidebar-menu a { color: white; text-decoration: none; padding: 12px 20px; font-size: 14px; }
+.sidebar-menu a.active { background: rgba(0,0,0,0.2); border-left: 4px solid #FDC425; }
+
+.main-content { flex: 1; padding: 25px; background: #F4F6F9; }
+.content-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+
+.config-layout { display: grid; grid-template-columns: 200px 1fr; gap: 20px; }
+.tabs { background: white; border-radius: 8px; display: flex; flex-direction: column; }
+.tab-item { padding: 12px 15px; text-decoration: none; color: #333; cursor: pointer; border-bottom: 1px solid #eee; }
+.tab-item.active { background: #fff5f5; color: #7A0C0C; font-weight: bold; border-left: 4px solid #7A0C0C; }
+
+.config-card { background: white; padding: 20px; border-radius: 8px; }
+.form-group { margin-bottom: 15px; display: flex; flex-direction: column; }
+.form-group label { font-size: 13px; font-weight: bold; margin-bottom: 5px; }
+.form-group input { padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+
+.color-box { display: flex; gap: 20px; }
+.btn-primary { background-color: #7A0C0C; color: white; border: none; padding: 10px 18px; border-radius: 6px; cursor: pointer; }

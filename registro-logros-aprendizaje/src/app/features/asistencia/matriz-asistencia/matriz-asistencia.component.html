@@ -1,0 +1,75 @@
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="mini-logo">IE 20191</div>
+      <div>
+        <h3>I.E. 20191</h3>
+        <small>Alfonso Ugarte</small>
+      </div>
+    </div>
+    <nav class="sidebar-menu">
+      <a routerLink="/dashboard">Dashboard Principal</a>
+      <a routerLink="/asistencia/matriz" class="active">Vista Detallada y Matriz</a>
+      <a routerLink="/asistencia/alertas">Reportes de Alertas</a>
+      <a routerLink="/configuracion">Configuración y Admin</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="content-header">
+      <div>
+        <h1>Matriz Transaccional de Asistencia</h1>
+        <p>Vista detallada por sección y periodo mensual.</p>
+      </div>
+      <div class="filter-box">
+        <select [(ngModel)]="gradoSeleccionado">
+          <option>4to A - Secundaria</option>
+          <option>5to B - Secundaria</option>
+        </select>
+        <button class="btn-primary" (click)="exportarPDF()">Exportar PDF</button>
+      </div>
+    </header>
+
+    <div class="kpi-grid">
+      <div class="kpi-card green">
+        <span class="kpi-title">ASISTENCIA PROMEDIO</span>
+        <h2>{{ resumen.promedio }}</h2>
+      </div>
+      <div class="kpi-card red">
+        <span class="kpi-title">TOTAL INASISTENCIAS</span>
+        <h2>{{ resumen.inasistencias }}</h2>
+      </div>
+      <div class="kpi-card yellow">
+        <span class="kpi-title">TARDANZAS</span>
+        <h2>{{ resumen.tardanzas }}</h2>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <table class="matriz-table">
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>Estudiante</th>
+            <th *ngFor="let dia of diasMes">{{ dia }}</th>
+            <th>TOTAL %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let est of estudiantes; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td class="text-left"><strong>{{ est.nombre }}</strong></td>
+            <td *ngFor="let dia of diasMes">
+              <span class="badge" [ngClass]="{
+                'p': est.estado === 'P',
+                'a': est.estado === 'A',
+                't': est.estado === 'T'
+              }">{{ est.estado }}</span>
+            </td>
+            <td><strong>{{ est.porcentaje }}</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>

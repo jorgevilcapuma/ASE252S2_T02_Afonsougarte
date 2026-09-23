@@ -1,0 +1,60 @@
+.app-layout { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 0;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mini-logo {
+  background-color: var(--secondary-color);
+  color: #000;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.sidebar-menu { display: flex; flex-direction: column; margin-top: 20px; }
+.sidebar-menu a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 14px;
+}
+.sidebar-menu a.active, .sidebar-menu a:hover {
+  background-color: rgba(0,0,0,0.2);
+  color: white;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.main-content { flex: 1; padding: 30px; }
+
+.banner {
+  background: linear-gradient(135deg, #7A0C0C 0%, #D97706 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.grid-grados { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 12px; }
+.grado-card {
+  background: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.grado-card.active-sec { border-top: 4px solid var(--primary-color); }

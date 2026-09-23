@@ -1,0 +1,46 @@
+<div class="app-layout">
+  <!-- Sidebar Izquierdo -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="mini-logo">IE 20191</div>
+      <div>
+        <h3>I.E. 20191</h3>
+        <small>Alfonso Ugarte</small>
+      </div>
+    </div>
+
+    <nav class="sidebar-menu">
+      <a routerLink="/dashboard" class="active">Dashboard Principal</a>
+      <a routerLink="/asistencia/matriz">Vista Detallada y Matriz</a>
+      <a routerLink="/asistencia/alertas">Reportes de Alertas</a>
+      <a routerLink="/configuracion">Configuración y Administración</a>
+    </nav>
+  </aside>
+
+  <!-- Contenido Principal -->
+  <main class="main-content">
+    <div class="banner">
+      <h1>I.E. 20191 "Alfonso Ugarte"</h1>
+      <p>Formando líderes con valores, excelencia académica y compromiso cívico en San Vicente de Cañete. Construyendo el futuro, hoy.</p>
+    </div>
+
+    <!-- Sección de Grados -->
+    <section class="section-grados">
+      <h3>Nivel Primaria</h3>
+      <div class="grid-grados">
+        <div class="grado-card" *ngFor="let g of [1,2,3,4,5,6]">
+          <strong>{{g}}°</strong>
+          <span>Grado</span>
+        </div>
+      </div>
+
+      <h3 style="margin-top: 24px;">Nivel Secundaria</h3>
+      <div class="grid-grados">
+        <div class="grado-card active-sec" *ngFor="let g of [1,2,3,4,5]">
+          <strong>{{g}}°</strong>
+          <span>Grado</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

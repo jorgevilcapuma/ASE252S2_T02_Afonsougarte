@@ -1,0 +1,36 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="brand">
+      <div class="logo-circle">
+        <span>IE</span>
+        <strong>20191</strong>
+        <small>CAÑETE</small>
+      </div>
+      <h2>Acceso Institucional</h2>
+      <p>I.E. 20191 - Alfonso Ugarte</p>
+    </div>
+
+    <form (ngSubmit)="onLogin()">
+      <div class="field">
+        <label>Correo Electrónico Institucional</label>
+        <input type="email" [(ngModel)]="credentials.correo" name="correo" placeholder="usuario@ie20191.edu.pe" required>
+      </div>
+
+      <div class="field">
+        <label>Contraseña</label>
+        <input type="password" [(ngModel)]="credentials.contrasena" name="contrasena" placeholder="••••••••" required>
+      </div>
+
+      <div class="field">
+        <label>Perfil de Acceso</label>
+        <select [(ngModel)]="credentials.rol" name="rol">
+          <option value="ADMIN">Administrador / Directivo</option>
+          <option value="DOCENTE">Docente</option>
+          <option value="ALUMNO">Alumno</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-login">Iniciar Sesión</button>
+    </form>
+  </div>
+</div>
